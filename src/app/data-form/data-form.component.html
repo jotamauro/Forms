@@ -60,7 +60,7 @@
         />
         <app-campo-control-erro
           [mostrarErro]="verificaValidTouched('endereco.cep')"
-          msgErro="CEP é obrigatório."
+          mensagemDeErro="CEP é obrigatório."
         >
         </app-campo-control-erro>
       </div>
@@ -164,7 +164,7 @@
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">
+  <button type="submit" class="btn btn-primary" [disabled]="formulario.valid">
     Submit
   </button>
   <button type="reset" class="btn" (click)="resetar()">

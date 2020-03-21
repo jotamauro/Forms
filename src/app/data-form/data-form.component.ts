@@ -76,8 +76,20 @@ export class DataFormComponent implements OnInit {
         (erro: any) => alert("erro")
       );
     } else {
-      console.log("Error");
+      this.verificaValidacoesFormularios(this.formulario);
     }
+  }
+  verificaValidacoesFormularios(formGroup: FormGroup) {
+    //Retorna um array
+    Object.keys(formGroup.controls).forEach(campo => {
+      console.log(campo);
+      const controle = formGroup.get(campo);
+      //Marca o campo como tocado.
+      controle.markAsTouched();
+      if (controle instanceof FormGroup) {
+        this.verificaValidacoesFormularios(controle);
+      }
+    });
   }
   resetar() {
     this.formulario.reset();
