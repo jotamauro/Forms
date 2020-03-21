@@ -11,9 +11,10 @@ import { CampoControlErroComponent } from "./shared/campo-control-erro/campo-con
 import { HttpClientModule } from "@angular/common/http";
 import { DataFormModule } from "./data-form/data-form.module";
 import { SharedModule } from "./shared/shared.module";
+import { DataFormMvcComponent } from "./data-form-mvc/data-form-mvc.component";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, DataFormMvcComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
