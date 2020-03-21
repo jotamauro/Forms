@@ -12,6 +12,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { DataFormModule } from "./data-form/data-form.module";
 import { SharedModule } from "./shared/shared.module";
 import { DataFormMvcComponent } from "./data-form-mvc/data-form-mvc.component";
+import { DropdownService } from "./shared/service/dropdown.service";
 
 @NgModule({
   declarations: [AppComponent, DataFormMvcComponent],
@@ -24,7 +25,7 @@ import { DataFormMvcComponent } from "./data-form-mvc/data-form-mvc.component";
     ReactiveFormsModule,
     DataFormModule
   ],
-  providers: [],
+  providers: [DropdownService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
