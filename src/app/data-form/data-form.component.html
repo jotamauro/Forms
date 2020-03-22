@@ -230,7 +230,26 @@
         </app-campo-control-erro>
       </div>
     </div>
+    <div class="col-md-3" [ngClass]="aplicaCssErro('frameworks')">
+      <label for="frameworks">Frameworks</label>
+      <div id="frameworks" class="row">
+        <div
+          class="checkbox"
+          class="col-sm-4"
+          formArrayName="frameworks"
+          *ngFor="
+            let item of formulario.get('frameworks').controls;
+            let i = index
+          "
+        >
+          <label class="checkbox-inline">
+            <input type="checkbox" [formControlName]="i" />{{ frameworksOf[i] }}
+          </label>
+        </div>
+      </div>
+    </div>
   </div>
+
   <button type="submit" class="btn btn-primary" [disabled]="formulario.valid">
     Submit
   </button>
