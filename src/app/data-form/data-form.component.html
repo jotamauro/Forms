@@ -186,14 +186,35 @@
       >
     </div>
   </div>
+  <div class="form-group">
+    <div class="col-md-3" [ngClass]="aplicaCssErro('tecnologia')">
+      <label for="tecnologia" class="control-label">Tecnologias</label>
+      <select
+        type="text"
+        class="form-control"
+        id="tecnologia"
+        formControlName="tecnologia"
+        multiple
+      >
+        <option
+          *ngFor="let tecnologia of tecnologias"
+          [ngValue]="tecnologia.nome"
+          >{{ tecnologia.desc }}</option
+        ></select
+      >
+    </div>
+  </div>
   <button type="submit" class="btn btn-primary" [disabled]="formulario.valid">
     Submit
   </button>
-  <button class="btn" (click)="setarCargo()">
+  <button class="btn btn-info" (click)="setarCargo()">
     Cargo
   </button>
+  <button class="btn btn-info" (click)="setarTecnologias()">
+    Tecnologias
+  </button>
 
-  <button type="reset" class="btn" (click)="resetar()">
+  <button type="reset" class="btn btn-default" (click)="resetar()">
     Cancelar
   </button>
   <app-form-debug [form]="formulario"></app-form-debug>
