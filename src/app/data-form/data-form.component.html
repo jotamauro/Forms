@@ -185,8 +185,7 @@
         }}</option></select
       >
     </div>
-  </div>
-  <div class="form-group">
+
     <div class="col-md-3" [ngClass]="aplicaCssErro('tecnologia')">
       <label for="tecnologia" class="control-label">Tecnologias</label>
       <select
@@ -202,6 +201,20 @@
           >{{ tecnologia.desc }}</option
         ></select
       >
+    </div>
+    <div class="col-md-3" [ngClass]="aplicaCssErro('newsletter')">
+      <label for="newsletter" class="control-label">Newsletter</label>
+      <div id="newsletter" class="row">
+        <div class="col-sm-4" *ngFor="let item of newsletters">
+          <label class="radio-inline">
+            <input
+              type="radio"
+              [value]="item.valor"
+              formControlName="newsletter"
+            />{{ item.desc }}
+          </label>
+        </div>
+      </div>
     </div>
   </div>
   <button type="submit" class="btn btn-primary" [disabled]="formulario.valid">
