@@ -148,13 +148,20 @@
 
       <div class="col-md-3" [ngClass]="aplicaCssErro('endereco.estado')">
         <label for="estado" class="control-label">Estado</label>
-        <input
+        <select
           type="text"
           class="form-control"
           id="estado"
-          readonly
           formControlName="estado"
-        />
+        >
+          <!-- Utilizando o pipe async, é realizada a desiscrinção automaticamente -->
+          <option
+            *ngFor="let estado of estados | async"
+            [value]="estado.sigla"
+            >{{ estado.nome }}</option
+          ></select
+        >
+
         <app-campo-control-erro
           [mostrarErro]="verificaValidTouched('endereco.estado')"
           mensagemDeErro="Estado é obrigatório."
